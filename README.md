@@ -1,1 +1,3 @@
-Submission for the HRT/Partcl macro placement challenge
+**Submission for the HRT/Partcl macro placement challenge**
+
+A two-phase macro placement optimizer that warm-starts from an existing placement, then refines using simulated annealing with connectivity-aware move operators (net-guided swaps, cluster shifts, macro rotation). Phase 1 optimizes wirelength with adaptive step sizes scaled by local packing density and connectivity. Upon convergence, Phase 2 trains an online ridge regression surrogate from accumulated (placement features, proxy cost) pairs and switches the acceptance criterion to surrogate-predicted cost, enabling congestion- and density-aware optimization at near-wirelength evaluation speed. Adaptive stopping terminates each phase when real proxy cost checkpoints show no further improvement.
